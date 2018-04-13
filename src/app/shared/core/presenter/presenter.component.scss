@@ -15,14 +15,4 @@ rs-presenter{
 		margin-bottom: 0;
 	}
 
-	:after{
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 30px;
-		height: 7px;
-		background-color: $accent-1;
-	}
 }
