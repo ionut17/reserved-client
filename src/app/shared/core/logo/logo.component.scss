@@ -1,0 +1,13 @@
+rs-logo{
+	@extend %component;
+	justify-content: center;
+	align-items: center;
+
+	width: 150px;
+	height: 36px;
+
+	background-image: url('../assets/imgs/logo.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}

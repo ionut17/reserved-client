@@ -1,0 +1,14 @@
+rs-header{
+	@extend %component;
+	// padding: 0 nth($paddings, 2);
+
+	width: 100%;
+	height: $header-height;
+	justify-content: center;
+	align-items: center;
+	background-color: $light-1;
+
+	rs-logo{
+		flex-grow: 1;
+	}
+}
