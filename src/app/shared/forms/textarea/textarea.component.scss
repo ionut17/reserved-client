@@ -1,0 +1,7 @@
+rs-textarea{
+	@extend %form-host;
+
+	textarea{
+		@extend %form-component;
+	}
+}

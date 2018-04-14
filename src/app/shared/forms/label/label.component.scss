@@ -1,0 +1,9 @@
+rs-label{
+    font-size: 2rem;
+    font-family: $font-family-text;
+
+    ion-label {
+        margin: 5px !important;
+        margin-left: nth($margins, 1) !important;
+    }
+}

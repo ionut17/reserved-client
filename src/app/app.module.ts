@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { CoreModule } from './shared/core';
+import { ReservationPageModule } from '../pages/+reservation/reservation.module';
+import { RestaurantsPageModule } from '../pages/restaurants/restaurants.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { CoreModule } from './shared/core';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    CoreModule
+    CoreModule,
+    RestaurantsPageModule,
+    ReservationPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

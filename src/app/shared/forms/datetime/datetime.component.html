@@ -1,0 +1,8 @@
+<rs-icon *ngIf="icon" [name]="icon" size="lg"></rs-icon>
+<ion-datetime
+    ngDefaultControl
+    [(ngModel)]="value"
+    [placeholder]="placeholder"
+    [displayFormat]="displayFormat"
+    [pickerFormat]="pickerFormat"
+    [minuteValues]="minuteValues"></ion-datetime>

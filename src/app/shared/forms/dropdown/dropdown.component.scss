@@ -1,0 +1,11 @@
+rs-dropdown{
+	@extend %form-host;
+
+	select{
+		@extend %form-component;
+		outline: none;
+		&:focus{
+			outline: none;
+		}
+	}
+}

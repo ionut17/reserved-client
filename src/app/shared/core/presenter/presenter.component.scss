@@ -8,11 +8,28 @@ rs-presenter{
 
 	background-color: $dark-2;
 	width: 100%;
-	height: 150px;
+	height: 120px;
 
-	h3{
+	span{
+		font-size: 3rem;
+		font-family: $font-family-title;
 		color: $light-1;
 		margin-bottom: 0;
+	}
+
+	rs-icon{
+		color: $light-3;
+	}
+
+	&:after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 30px;
+		height: 7px;
+		background-color: $accent-1;
 	}
 
 }

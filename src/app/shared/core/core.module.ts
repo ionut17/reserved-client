@@ -8,13 +8,17 @@ import { IconComponent } from './icon/icon.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { PresenterComponent } from './presenter/presenter.component';
+import { FooterButtonComponent } from './footer-button/footer-button.component';
+import { InfobarComponent } from './infobar/infobar.component';
 
 const moduleComponents = [
   HeaderComponent,
   MenuComponent,
   LogoComponent,
   IconComponent,
-  PresenterComponent
+  PresenterComponent,
+  FooterButtonComponent,
+  InfobarComponent
 ]
 
 @NgModule({

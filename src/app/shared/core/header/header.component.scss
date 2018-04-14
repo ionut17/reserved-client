@@ -1,6 +1,6 @@
 rs-header{
 	@extend %component;
-	// padding: 0 nth($paddings, 2);
+	padding: 0 nth($paddings, 1);
 
 	width: 100%;
 	height: $header-height;

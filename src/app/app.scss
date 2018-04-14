@@ -15,4 +15,14 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-@import "../../../reServed-core/assets/icons/css/line-awesome.css";
+@import "../../../reServed-core/styles/singleton";
+@import "../../../reServed-core/styles/commons";
+@import "../../../reServed-core/assets/icons/css/line-awesome.scss";
+
+html{
+	font-size: $font-base-size;
+	// font-family: $font-family-text;
+}
+body{
+	font-size: 2rem;
+}

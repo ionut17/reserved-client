@@ -1,0 +1,7 @@
+rs-form-group{
+    display: flex;
+    flex-direction: column;
+    &:not(:first-child){
+        margin-top: nth($margins, 2);
+    }
+}

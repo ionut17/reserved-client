@@ -1,0 +1,19 @@
+rs-input{
+    @extend %form-component;
+    padding: 0 nth($paddings,1);
+    border-radius: 20px;
+
+    ion-input input{
+        margin-left: nth($margins, 1) !important;
+        margin-right: nth($margins, 1) !important;
+    }
+
+    //Reset number input
+    input[type='number'] {
+        -moz-appearance:textfield;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+}
