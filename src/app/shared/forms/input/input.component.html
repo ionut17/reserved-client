@@ -1,11 +1,15 @@
-<rs-icon *ngIf="icon" [name]="icon" size="lg"></rs-icon>
-<ion-input ngDefaultControl
-           [(ngModel)]="value"
-           [type]="type"
-           [placeholder]="placeholder"
-           [readonly]="readonly"
-           [min]="min"
-           [max]="max"
-           [step]="step"
-           [clearInput]="clearInput"
-           [clearOnEdit]="clearOnEdit"></ion-input>
+<div class='form-component'>
+  <rs-icon *ngIf="icon" [name]="icon" size="lg"></rs-icon>
+  <ion-input ngDefaultControl
+              [(ngModel)]="value"
+              [type]="type"
+              [placeholder]="placeholder"
+              [readonly]="readonly"
+              [min]="min"
+              [max]="max"
+              [step]="step"
+              [clearInput]="clearInput"
+              [clearOnEdit]="clearOnEdit"
+              (ionBlur)="onBlur()"></ion-input>
+</div>
+<rs-validations [controlRef]="controlRef" [controlRefName]="controlRefName"></rs-validations>

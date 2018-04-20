@@ -1,8 +1,16 @@
-<rs-icon *ngIf="icon" [name]="icon" size="lg"></rs-icon>
-<ion-datetime
-    ngDefaultControl
-    [(ngModel)]="value"
-    [placeholder]="placeholder"
-    [displayFormat]="displayFormat"
-    [pickerFormat]="pickerFormat"
-    [minuteValues]="minuteValues"></ion-datetime>
+<div class='form-component'>
+    <rs-icon *ngIf="icon" [name]="icon" size="lg"></rs-icon>
+    <ion-datetime
+        ngDefaultControl
+        [(ngModel)]="value"
+        [placeholder]="placeholder"
+        [displayFormat]="displayFormat"
+        [pickerFormat]="pickerFormat"
+        [minuteValues]="minuteValues"
+        [min]="minDate?.toISOString(true)"
+        [max]="maxDate?.toISOString(true)"
+        cancelText="Anuleaza"
+        doneText="Alege"
+        (ionBlur)="onBlur()"></ion-datetime>
+</div>
+<rs-validations [controlRef]="controlRef" [controlRefName]="controlRefName"></rs-validations>

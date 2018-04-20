@@ -3,4 +3,11 @@ page-restaurants {
 	ion-content{
 		background-color: $background;
 	}
+
+	.restaurants-wrapper{
+		rs-restaurant-entry + rs-restaurant-entry{
+			margin-top: nth($margins, 1);
+		}
+	}
+
 }

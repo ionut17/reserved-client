@@ -10,6 +10,7 @@ import { LabelComponent } from './label/label.component';
 import { CoreModule } from '../core';
 import { FormGroupComponent } from './form-group/form-group.component';
 import { DatetimeComponent } from './datetime/datetime.component';
+import { ValidationsComponent } from './validations/validations.component';
 
 const moduleComponents = [
   InputComponent,
@@ -17,7 +18,8 @@ const moduleComponents = [
   DropdownComponent,
   LabelComponent,
   DatetimeComponent,
-  FormGroupComponent
+  FormGroupComponent,
+  ValidationsComponent
 ];
 
 @NgModule({

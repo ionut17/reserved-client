@@ -1,0 +1,17 @@
+rs-validations{
+	@extend %component;
+
+	span{
+		padding: 0 nth($paddings, 1);
+		padding-top: nth($paddings, 1);
+	}
+
+	span::first-letter{
+		text-transform: uppercase;
+	}
+	span.error{
+		font-size: 14px;
+		font-weight: 400;
+		color: $accent-1;
+	}
+}

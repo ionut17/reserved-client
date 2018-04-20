@@ -3,16 +3,18 @@
 </ion-header>
 <ion-content>
   <rs-presenter icon="clock-o" label="Choose a time and place"></rs-presenter>
-  <rs-infobar>Restaurant</rs-infobar>
+  <rs-infobar>{{restaurant.name}}</rs-infobar>
   <ion-list padding>
     <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" #formRef="ngForm">
       <rs-form-group>
           <rs-label>Persoane</rs-label>
           <rs-input
+              [controlRef]="reservationForm.controls.people"
+              controlRefName="persoane"
               formControlName="people"
               icon="group"
               type="number"
-              placeholder="#"
+              placeholder="1-9"
               min="1"
               max="9"
               step="1"></rs-input>
@@ -20,6 +22,9 @@
         <rs-form-group>
           <rs-label>Ziua</rs-label>
           <rs-datetime
+              [minDate]="currentDate"
+              [controlRef]="reservationForm.controls.date"
+              controlRefName="ziua"
               formControlName="date"
               icon="calendar"
               displayFormat="DD MMM YYYY"
@@ -29,6 +34,9 @@
         <rs-form-group>
           <rs-label>Ora</rs-label>
           <rs-datetime
+              [minDate]="minTime"
+              [controlRef]="reservationForm.controls.time"
+              controlRefName="ora"
               formControlName="time"
               icon="clock-o"
               displayFormat="HH:mm"
@@ -39,7 +47,7 @@
     </form>
   </ion-list>
 </ion-content>
-<ion-footer *ngIf="formRef.valid">
+<ion-footer>
   <rs-footer-button (click)="formRef.ngSubmit.emit()">
     Finalizează
     <rs-icon name="angle-right" size="lg"></rs-icon>

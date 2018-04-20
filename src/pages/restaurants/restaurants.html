@@ -3,7 +3,10 @@
 </ion-header>
 <ion-content>
   <rs-presenter icon="cutlery" label="Alege restaurantul"></rs-presenter>
-  <div padding>
-    <button ion-button block large [navPush]="'ReservationPage'">Rezerva</button>
-  </div>
+  <section class='restaurants-wrapper' padding>
+    <rs-restaurant-entry
+      *ngFor="let restaurant of restaurants"
+      [restaurant]="restaurant"
+      (click)="onSelectRestaurant(restaurant)"></rs-restaurant-entry>
+  </section>
 </ion-content>

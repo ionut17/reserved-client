@@ -1,5 +1,6 @@
 import { Component, OnInit, forwardRef, Input } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import * as moment from 'moment';
 
 import { BaseFormComponent } from '../shared/base-form.component';
 
@@ -21,6 +22,10 @@ export class DatetimeComponent extends BaseFormComponent<any> implements OnInit 
   @Input() pickerFormat: string;
 
   @Input() minuteValues: Array<any> | string;
+
+  @Input() minDate: moment.Moment;
+
+  @Input() maxDate: moment.Moment;
 
   constructor() {
     super();

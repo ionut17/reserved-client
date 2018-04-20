@@ -1,13 +1,18 @@
 rs-datetime{
-    @extend %form-component;
-    position: relative;
-    overflow: hidden;
-    padding: 0 nth($paddings,1);
-    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 
-    ion-datetime{
-        width: 100%;
-        padding-left: nth($margins, 1) !important;
-        padding-right: nth($margins,1) !important;
+    .form-component{
+        @extend %form-component;
+        position: relative;
+        overflow: hidden;
+        padding: 0 nth($paddings,1);
+        border-radius: 20px;
+
+        ion-datetime{
+            width: 100%;
+            padding-left: nth($margins, 1) !important;
+            padding-right: nth($margins,1) !important;
+        }
     }
 }

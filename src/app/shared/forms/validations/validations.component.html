@@ -1,0 +1,8 @@
+<ng-container *ngIf="controlRef && controlRef.errors && !controlRef.valid && controlRef.touched">
+  <span *ngIf="controlRef.errors.required" class="error">Câmpul {{controlRefName}} este necesar.</span>
+  <span *ngIf="controlRef.errors.email" class="error">Câmpul {{controlRefName}} nu respectă formatul unui email valid. (Exemplu: adresa@mail.com)</span>
+  <span *ngIf="controlRef.errors.minlength" class="error">Câmpul {{controlRefName}} nu are lungimea minima de {{controlRef.errors.minlength.requiredLength}} caractere.</span>
+  <span *ngIf="controlRef.errors.maxlength" class="error">Câmpul {{controlRefName}} depășește lungimea maxima de {{controlRef.errors.maxlength.requiredLength}} caractere.</span>
+  <span *ngIf="controlRef.errors.min" class="error">Câmpul {{controlRefName}} nu are valoarea minimă {{controlRef.errors.min.min}}.</span>
+  <span *ngIf="controlRef.errors.max" class="error">Câmpul {{controlRefName}} depășește valoarea maximă {{controlRef.errors.max.max}}.</span>
+</ng-container>

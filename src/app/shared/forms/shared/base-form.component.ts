@@ -10,6 +10,7 @@ export class BaseFormComponent<T> implements ControlValueAccessor{
     @Input() readonly: boolean = false;
     @Input() placeholder: string = '';
     @Input() controlRef: NgModel;
+    @Input() controlRefName: string;
 
     @Input() icon: string;
     @Input() iconSide: 'left' | 'right' = 'left';
