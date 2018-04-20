@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ReservationDto, ReservationStatus, Restaurant, Client } from '../../app/shared/@model';
+import { Reservation, ReservationStatus, Restaurant, Client } from '../../app/shared/@model';
 import { ClientManagerService, ReservationService } from '../../app/shared/@services';
 
 @IonicPage()
@@ -54,7 +54,8 @@ export class ReservationPage implements OnInit {
       chosenDate.hours(this.reservationForm.value.time.slice(0,2));
       chosenDate.minutes(this.reservationForm.value.time.slice(3,5));
 
-      const reservation: ReservationDto = {
+      const reservation: Reservation = {
+        id: null,
         clientId: this.client.id,
         restaurantId: this.restaurant.id,
         startTime: chosenDate.toDate(),
@@ -63,7 +64,8 @@ export class ReservationPage implements OnInit {
         people: this.reservationForm.value.people,
         tables: []
       };
-      this.reservationService.post(<any>reservation).subscribe((res) => {
+      console.log(reservation);
+      this.reservationService.post(reservation).subscribe((res) => {
         console.log(res);
       });
     } else{
