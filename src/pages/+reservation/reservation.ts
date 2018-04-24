@@ -58,13 +58,12 @@ export class ReservationPage implements OnInit {
         id: null,
         clientId: this.client.id,
         restaurantId: this.restaurant.id,
-        startTime: chosenDate.toDate(),
+        startTime: chosenDate.toISOString(),
         endTime: null,
         status: ReservationStatus.Pending,
         people: this.reservationForm.value.people,
         tables: []
       };
-      console.log(reservation);
       this.reservationService.post(reservation).subscribe((res) => {
         console.log(res);
       });
