@@ -8,9 +8,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { CoreModule } from './shared/core';
-import { ReservationPageModule } from '../pages/+reservation/reservation.module';
-import { RestaurantsPageModule } from '../pages/restaurants/restaurants.module';
 import { RestaurantService, ReservationService, ClientService, ClientManagerService } from './shared/@services';
+import { ReservationPageModule, ReservationReviewPageModule, ReservationConfirmationPageModule, RestaurantsPageModule } from '../pages/index';
+
+const ionicPageModules = [
+  RestaurantsPageModule,
+  ReservationPageModule,
+  ReservationReviewPageModule,
+  ReservationConfirmationPageModule
+];
 
 @NgModule({
   declarations: [
@@ -21,8 +27,7 @@ import { RestaurantService, ReservationService, ClientService, ClientManagerServ
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     CoreModule,
-    RestaurantsPageModule,
-    ReservationPageModule
+    ...ionicPageModules
   ],
   bootstrap: [IonicApp],
   entryComponents: [

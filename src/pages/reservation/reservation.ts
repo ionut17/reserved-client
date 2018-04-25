@@ -5,6 +5,7 @@ import * as moment from 'moment';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Reservation, ReservationStatus, Restaurant, Client } from '../../app/shared/@model';
 import { ClientManagerService, ReservationService } from '../../app/shared/@services';
+import { ReservationReviewPage } from '../reservation-review/reservation-review';
 
 @IonicPage()
 @Component({
@@ -50,13 +51,14 @@ export class ReservationPage implements OnInit {
 
   onSubmit(){
     if (this.reservationForm.valid){
-      let chosenDate: moment.Moment = moment(this.reservationForm.value.date);
+      //Build reservation object
+      const clientId: string = this.client.id;
+      const chosenDate: moment.Moment = moment(this.reservationForm.value.date);
       chosenDate.hours(this.reservationForm.value.time.slice(0,2));
       chosenDate.minutes(this.reservationForm.value.time.slice(3,5));
-
       const reservation: Reservation = {
         id: null,
-        clientId: this.client.id,
+        clientId: clientId,
         restaurantId: this.restaurant.id,
         startTime: chosenDate.toISOString(),
         endTime: null,
@@ -64,9 +66,11 @@ export class ReservationPage implements OnInit {
         people: this.reservationForm.value.people,
         tables: []
       };
-      this.reservationService.post(reservation).subscribe((res) => {
-        console.log(res);
+      //Go to review page
+      this.navCtrl.push(ReservationReviewPage, {
+        "reservation": reservation
       });
+
     } else{
       Object.keys(this.reservationForm.controls).forEach((key: string)=>{
         this.reservationForm.controls[key].markAsTouched();

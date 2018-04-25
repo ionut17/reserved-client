@@ -1,0 +1,59 @@
+<ion-header>
+  <rs-header></rs-header>
+</ion-header>
+<ion-content>
+  <rs-presenter icon="clock-o" label="Sumar rezervare"></rs-presenter>
+  <ion-list padding>
+    <ion-item>
+      <div class="review-line">
+        <rs-icon name="tags" size="2x"></rs-icon>
+        <span>Nume</span>
+        <span>
+          {{client.firstName+' '+client.lastName}}
+        </span>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="review-line">
+        <rs-icon name="group" size="2x"></rs-icon>
+        <span>Locuri</span>
+        <span>
+          {{reservation.people}}
+        </span>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="review-line">
+        <rs-icon name="calendar" size="2x"></rs-icon>
+        <span>Data</span>
+        <span>
+          {{reservation.startTime | ldate:'DD/MM/YYYY'}}
+        </span>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="review-line">
+        <rs-icon name="clock-o" size="2x"></rs-icon>
+        <span>Ora</span>
+        <span>
+          {{reservation.startTime | ldate:'HH:mm'}}
+        </span>
+      </div>
+    </ion-item>
+    <ion-item>
+      <div class="review-line">
+        <rs-icon name="table" size="2x"></rs-icon>
+        <span>Masa rezervată</span>
+        <span>
+          Automat
+        </span>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <rs-footer-button (click)="onSendReservation()">
+    Trimite rezervarea
+    <rs-icon name="angle-right" size="lg"></rs-icon>
+  </rs-footer-button>
+</ion-footer>

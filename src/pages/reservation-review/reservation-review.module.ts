@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 
+import { PipesModule } from '../../../../reServed-restaurant/src/app/shared/@pipes/pipes.module';
 import { CoreModule } from '../../app/shared/core/core.module';
-import { ReservationPage } from './reservation';
 import { CustomFormsModule } from '../../app/shared/forms/forms.module';
+import { ReservationReviewPage } from './reservation-review';
 
 @NgModule({
   declarations: [
-    ReservationPage,
+    ReservationReviewPage
   ],
   imports: [
-    IonicPageModule.forChild(ReservationPage),
+    IonicPageModule.forChild(ReservationReviewPage),
     CoreModule,
+    PipesModule,
     CustomFormsModule
   ],
 })
-export class ReservationPageModule {}
+export class ReservationReviewPageModule {}
