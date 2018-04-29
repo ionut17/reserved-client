@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import * as moment from 'moment';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
@@ -13,6 +13,8 @@ import { ReservationReviewPage } from '../reservation-review/reservation-review'
   templateUrl: 'reservation.html',
 })
 export class ReservationPage implements OnInit {
+
+  @ViewChild(Content) content: Content;
 
   currentDate: moment.Moment;
   reservationForm: FormGroup;
@@ -39,6 +41,7 @@ export class ReservationPage implements OnInit {
 
   ionViewWillEnter() {
     this.currentDate = moment();
+    this.content.scrollToTop();
   }
 
   initializeForm(){

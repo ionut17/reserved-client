@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PresenterComponent } from './presenter/presenter.component';
 import { FooterButtonComponent } from './footer-button/footer-button.component';
 import { InfobarComponent } from './infobar/infobar.component';
+import { BackButtonComponent } from './back-button/back-button.component';
 
 const moduleComponents = [
   HeaderComponent,
@@ -18,6 +19,7 @@ const moduleComponents = [
   IconComponent,
   PresenterComponent,
   FooterButtonComponent,
+  BackButtonComponent,
   InfobarComponent
 ]
 

@@ -13,7 +13,7 @@ import { Reservation, Client } from '../../app/shared/@model';
 })
 export class ReservationConfirmationPage implements OnInit {
 
-  statusMessage: string;
+  sent: boolean = false;;
 
   constructor(private navParams: NavParams,
               private navCtrl: NavController,
@@ -24,7 +24,7 @@ export class ReservationConfirmationPage implements OnInit {
   ngOnInit(){}
 
   ionViewWillEnter(){
-    this.statusMessage = 'Se trimite rezervarea...';
+    this.sent = false;
   }
 
   onGoToRoot(){
@@ -34,7 +34,7 @@ export class ReservationConfirmationPage implements OnInit {
   onSendReservation(reservation: Reservation){
     this.reservationService.post(reservation).subscribe((res) => {
       console.log(res);
-      this.statusMessage = 'Rezervare trimisă cu succes!';
+      this.sent = true;
     });
   }
 

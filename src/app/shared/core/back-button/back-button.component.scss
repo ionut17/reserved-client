@@ -1,0 +1,16 @@
+rs-back-button{
+	@extend %component;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	height: 50px;
+	padding: 0 nth($paddings, 2);
+
+	background-color: $dark-1;
+	color: $light-1;
+	font-family: $font-family-text;
+
+	button{
+		margin: 0 !important;
+	}
+}

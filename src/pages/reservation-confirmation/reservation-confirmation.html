@@ -1,8 +1,18 @@
 <ion-header>
   <rs-header></rs-header>
 </ion-header>
-<ion-content>
-  <div padding>{{statusMessage}}</div>
+<ion-content padding>
+  <div class="message-wrapper">
+    <ng-container *ngIf="!sent; else sent">
+      <rs-icon name="clock-o" size="2x"></rs-icon>
+      <h3>'Se trimite rezervarea...'</h3>
+    </ng-container>
+    <ng-template #sent>
+      <rs-icon name="clock-o" size="2x"></rs-icon>
+      <h3>Rezervare trimisa cu succes!</h3>
+    </ng-template>
+    <div class="accent-bar"></div>
+  </div>
 </ion-content>
 <ion-footer>
   <rs-footer-button (click)="onGoToRoot()">

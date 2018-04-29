@@ -3,6 +3,7 @@
 </ion-header>
 <ion-content>
   <rs-presenter icon="clock-o" label="Choose a time and place"></rs-presenter>
+  <rs-back-button></rs-back-button>
   <rs-infobar>{{restaurant.name}}</rs-infobar>
   <ion-list padding>
     <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" #formRef="ngForm">
