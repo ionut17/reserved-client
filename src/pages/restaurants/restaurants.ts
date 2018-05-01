@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestaurantService, ClientManagerService } from '../../app/shared/@services';
 import { Restaurant } from '../../app/shared/@model';
-
-/**
- * Generated class for the RestaurantsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { baseAnimation } from '../../app/shared/@model';
 
 @IonicPage()
 @Component({
@@ -34,7 +28,7 @@ export class RestaurantsPage {
   onSelectRestaurant(restaurant: Restaurant){
     this.navCtrl.push('ReservationPage', {
       "restaurant": restaurant
-    })
+    }, baseAnimation);
   }
 
 }

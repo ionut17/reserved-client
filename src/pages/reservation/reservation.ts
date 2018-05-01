@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import * as moment from 'moment';
 
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Reservation, ReservationStatus, Restaurant, Client } from '../../app/shared/@model';
+import { Reservation, ReservationStatus, Restaurant, Client, baseAnimation } from '../../app/shared/@model';
 import { ClientManagerService, ReservationService } from '../../app/shared/@services';
 import { ReservationReviewPage } from '../reservation-review/reservation-review';
 
@@ -72,7 +72,7 @@ export class ReservationPage implements OnInit {
       //Go to review page
       this.navCtrl.push(ReservationReviewPage, {
         "reservation": reservation
-      });
+      }, baseAnimation);
 
     } else{
       Object.keys(this.reservationForm.controls).forEach((key: string)=>{

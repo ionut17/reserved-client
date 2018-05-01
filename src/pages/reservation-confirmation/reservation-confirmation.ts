@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as moment from 'moment';
 
 import { ReservationService, ClientManagerService } from '../../app/shared/@services';
-import { Reservation, Client } from '../../app/shared/@model';
+import { Reservation, Client, baseAnimation } from '../../app/shared/@model';
 
 
 @IonicPage()
@@ -28,7 +28,7 @@ export class ReservationConfirmationPage implements OnInit {
   }
 
   onGoToRoot(){
-    this.navCtrl.popToRoot();
+    this.navCtrl.popToRoot(baseAnimation);
   }
 
   onSendReservation(reservation: Reservation){

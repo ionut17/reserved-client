@@ -4,7 +4,7 @@ import * as moment from 'moment';
 
 import { ReservationConfirmationPage } from '../reservation-confirmation/reservation-confirmation';
 import { ReservationService, ClientManagerService } from '../../app/shared/@services';
-import { Reservation, Client } from '../../app/shared/@model';
+import { Reservation, Client, baseAnimation } from '../../app/shared/@model';
 
 
 @IonicPage()
@@ -30,7 +30,7 @@ export class ReservationReviewPage implements OnInit {
   onSendReservation(){
     this.navCtrl.push(ReservationConfirmationPage, {
       "reservation": this.reservation
-    });
+    }, baseAnimation);
   }
 
 }

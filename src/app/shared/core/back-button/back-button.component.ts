@@ -1,5 +1,6 @@
 import { Component, Input, HostListener } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavOptions } from 'ionic-angular';
+import { baseAnimation } from '../../@model';
 
 @Component({
   selector: 'rs-back-button',
@@ -13,7 +14,9 @@ export class BackButtonComponent {
 
   @HostListener('click', ['$event'])
   onClick() {
-    this.navCtrl.pop({animate: true, direction: 'back'});
+    const opts: NavOptions = Object.assign({}, baseAnimation);
+    opts.direction = 'back';
+    this.navCtrl.pop(opts);
   }
 
 }
