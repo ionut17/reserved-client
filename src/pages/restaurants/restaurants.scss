@@ -5,6 +5,9 @@ page-restaurants {
 	}
 
 	.restaurants-wrapper{
+		rs-restaurant-entry{
+			@include shadow(2);
+		}
 		rs-restaurant-entry + rs-restaurant-entry{
 			margin-top: nth($margins, 1);
 		}

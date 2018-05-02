@@ -1,6 +1,3 @@
-<ion-header>
-  <rs-header></rs-header>
-</ion-header>
 <ion-content padding>
   <div class="message-wrapper">
     <ng-container *ngIf="!sent; else sent">
@@ -9,7 +6,7 @@
     </ng-container>
     <ng-template #sent>
       <rs-icon name="clock-o" size="2x"></rs-icon>
-      <h3>Rezervare trimisa cu succes!</h3>
+      <h3>{{sentMessage}}</h3>
     </ng-template>
     <div class="accent-bar"></div>
   </div>

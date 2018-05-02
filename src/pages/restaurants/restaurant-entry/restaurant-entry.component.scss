@@ -1,7 +1,6 @@
 rs-restaurant-entry{
 	@extend %component;
 	@include padding(2);
-	@include background-image('https://source.unsplash.com/P8zDQz8Y2Vc/1600x900');
 
 	height: 120px;
 	width: 100%;
@@ -16,6 +15,16 @@ rs-restaurant-entry{
 		justify-content: flex-end;
 		align-items: flex-start;
 		z-index: 1;
+	}
+
+	.background{
+		@include background-image(''); //'' is placeholder for the dynamic image inserted by ng
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	h3{

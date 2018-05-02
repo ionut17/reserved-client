@@ -8,7 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { CoreModule } from './shared/core';
-import { RestaurantService, ReservationService, ClientService, ClientManagerService } from './shared/@services';
+import { RestaurantService, ReservationService, ClientService, ClientManagerService, MessageService } from './shared/@services';
 import { ReservationPageModule, ReservationReviewPageModule, ReservationConfirmationPageModule, RestaurantsPageModule } from '../pages/index';
 
 const ionicPageModules = [
@@ -40,7 +40,8 @@ const ionicPageModules = [
     RestaurantService,
     ReservationService,
     ClientService,
-    ClientManagerService
+    ClientManagerService,
+    MessageService
   ]
 })
 export class AppModule {}

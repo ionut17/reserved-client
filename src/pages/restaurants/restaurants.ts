@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { SafeStyle, DomSanitizer } from '@angular/platform-browser';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 import { RestaurantService, ClientManagerService } from '../../app/shared/@services';
 import { Restaurant } from '../../app/shared/@model';
 import { baseAnimation } from '../../app/shared/@model';
@@ -15,6 +17,7 @@ export class RestaurantsPage {
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+              private sanitizer: DomSanitizer,
               private restaurantService: RestaurantService,
               private clientManagerService: ClientManagerService) {
   }

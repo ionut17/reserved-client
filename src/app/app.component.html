@@ -1,2 +1,7 @@
 <rs-menu [content]="mycontent"></rs-menu>
-<ion-nav #mycontent [root]="rootPage"></ion-nav>
+<ion-header>
+  <rs-header></rs-header>
+</ion-header>
+<ion-content>
+	<ion-nav #mycontent [root]="rootPage"></ion-nav>
+</ion-content>
